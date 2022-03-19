@@ -1,0 +1,111 @@
+<html> 
+   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+     <title>Auto con X3DOM</title> 
+     <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script> 
+     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'></link> 
+   </head> 
+   <body> 
+     <h1>Tarea semana 4 IGEV</h1> 
+     <p> 
+       Rosmeri Martínez Licort 
+     </p> 
+	 <x3d width='500px' height='400px'> 
+	   <scene> 
+	   
+<!--Se crea el rectángulo base del auto como la figura central del modelo, estableciendo el color, el volumen que abarca-->
+		<shape> 
+		   <appearance> 
+			 <material diffuseColor='1 0 1'></material> 
+		   </appearance> 
+		   <box ccw='true' hasHelperColors='false' size='5,2,3' ></box> 
+		</shape> 
+		
+<!--Se crea el rectángulo de arriba para conformar el cuerpo del carrito, estableciendo el mismo color, el volumen que abarca y la posición dende se ubicarña respecto al eje central, donde ya está el otro-->
+		<transform translation='-1 1 0'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='1 0 1'></material> 
+			 </appearance> 
+			 <box size='3,2,3' ></box> 
+		  </shape> 
+		</transform> 
+
+<!--Se crean las ruedas del coche, establecinedo las caraterísticas suficiente como para que sean cilindros redondos, pequeños y achatados. Además, se trasladan a 4 puntos del auto-->
+        <transform rotation='1 0 0 -1.5785' >
+		<transform translation='1.5 -1.575 -1'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='0 0 0'></material> 
+			 </appearance> 
+			 <Cylinder bottom='true' ccw='true' height='0.75' lit='true' metadata='X3DMetadataObject' radius='0.75' side='true' solid='true' subdivision='32' top='true' useGeoCache='true' ></Cylinder>
+            </shape> 
+		</transform> 
+        </transform>
+
+
+        <transform rotation='1 0 0 -1.5785' >
+		<transform translation='-1.5 -1.575 -1'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='0 0 0'></material> 
+			 </appearance> 
+			 <Cylinder bottom='true' ccw='true' height='0.75' lit='true' metadata='X3DMetadataObject' radius='0.75' side='true' solid='true' subdivision='32' top='true' useGeoCache='true' ></Cylinder>
+            </shape> 
+		</transform> 
+        </transform>
+
+      <transform rotation='1 0 0 -1.5785' >
+		<transform translation='1.5 1.575 -1'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='0 0 0'></material> 
+			 </appearance> 
+			 <Cylinder bottom='true' ccw='true' height='0.75' lit='true' metadata='X3DMetadataObject' radius='0.75' side='true' solid='true' subdivision='32' top='true' useGeoCache='true' ></Cylinder>
+            </shape> 
+		</transform> 
+        </transform>
+
+         <transform rotation='1 0 0 -1.5785' >
+		<transform translation='-1.5 1.575 -1'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='0 0 0'></material> 
+			 </appearance> 
+			 <Cylinder bottom='true' ccw='true' height='0.75' lit='true' metadata='X3DMetadataObject' radius='0.75' side='true' solid='true' subdivision='32' top='true' useGeoCache='true' ></Cylinder>
+            </shape> 
+		</transform> 
+        </transform>
+        
+<!--Se crean las luces del auto, con dos esferas ubicadas en el frente y incrustados en el rectángulo principal del auto-->
+	<transform translation='2.35 0 1'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='1 1 0.7'></material> 
+			 </appearance> 
+			 <Sphere radius='0.45' ></Sphere>
+            </shape> 
+		</transform> 
+
+	<transform translation='2.35 0 -1'> 
+		  <shape> 
+			 <appearance> 
+			   <material diffuseColor='1 1 0.7'></material> 
+			 </appearance> 
+			 <Sphere radius='0.45' ></Sphere>
+            </shape> 
+		</transform> 
+
+<!--Se agrega, además, un efecto de sombra que se identifica, a primera vista en la ruedas del auto, q tiene sombra sobre el cuerpo del auto. Además, cuando se gira el auto, en las luces , en las otras vistas del auto, se ve esa sobra creada por la luz, esta no gira con el auto.-->
+       <shape> 
+         <appearance>   
+              <DirectionalLight ambientIntensity='0.75' color='1,0,1' direction='0,0,-1' global='true' intensity='0.5'  on='true' shadowCascades='1' shadowFilterSize='0' shadowIntensity='0.5' shadowMapSize='1024' shadowOffset='0' shadowSplitFactor='1' shadowSplitOffset='0.1' zFar='-1' zNear='-1' ></DirectionalLight>
+
+   </appearance>
+ </shape> 
+
+    </scene> 
+
+	</x3d> 
+   </body> 
+</html> 

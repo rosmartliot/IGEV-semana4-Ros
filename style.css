@@ -1,0 +1,6 @@
+
+canvas { display: block; }
+
+/*El nombre en el cambas, aparece en una esquina */
+.controls { position: absolute; bottom: 0; left: 5; right: 0; padding: 2x; z-index: 5; font-size: 1000xz; color: #000; opacity: 1 }
+
